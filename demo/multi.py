@@ -27,6 +27,6 @@ for i in range(3):
     entries = soup.find('div', {'class': 'archive-text'}, strict=False)
     for article in entries:
         parse(article)
-    with open('data{}.json'.format(counter), 'w+') as outfile:
+    with open('data{}.json'.format(counter), 'w+', encoding='utf8') as outfile:
         json.dump(articles, outfile)
     articles = []
