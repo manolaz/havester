@@ -1,14 +1,13 @@
+import click
 import json
 from gazpacho import get, Soup
-
-BASE = 'http://www.fdesouche.com/category/securite'
+source = click.prompt('Source valid address@')
+BASE = source
 titres = []
 resumes = []
 counter = 1
 articles = []
-'''
-Sa
-'''
+
 def parse(page):
     result = {}
     titre = page.find('h2').find('a').text
